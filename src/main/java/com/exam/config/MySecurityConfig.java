@@ -34,6 +34,9 @@ public class MySecurityConfig {
 // public PasswordEncoder passwordEncoder() {
 //  return NoOpPasswordEncoder.getInstance();
 // }
+
+// NoOpPasswordEncoder Implementation (without securing the password)
+ /**
 @Bean
 public PasswordEncoder passwordEncoder() {
  return new PasswordEncoder() {
@@ -48,6 +51,14 @@ public PasswordEncoder passwordEncoder() {
   }
  };
 }
+*/
+
+ @Bean
+ public BCryptPasswordEncoder passwordEncoder(){
+  return new BCryptPasswordEncoder();
+ }
+
+
 
 
  @Bean
